@@ -73,7 +73,7 @@ ZSH_THEME="terminalparty"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting docker zsh-pentest nmap web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,7 +102,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias mala-kay-karaycha-hota="cat ~/TODO.md"
+alias todo="cat ~/TODO.md"
+#alias pls="sudo $(fc -ln -1) 2>/dev/null"
+alias sojabro="i3exit suspend"
+alias me="echo $(ifconfig enp4s0 | grep "inet " | cut -b 9- | cut -d" " -f2)"
+#neofetch
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.

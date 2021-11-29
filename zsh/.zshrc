@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias todo="cat ~/TODO.md"
+alias gut="git"
+alias car="cat"
 #alias pls="sudo $(fc -ln -1) 2>/dev/null"
 alias sojabro="i3exit suspend"
 alias me="echo $(ifconfig enp4s0 | grep "inet " | cut -b 9- | cut -d" " -f2)"

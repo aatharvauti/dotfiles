@@ -10,7 +10,7 @@ font pango:Source Code Pro Medium 12
 
 # Wallpaper
 #exec --no-startup-id nitrogen --restore; sleep1; picom -b 
-exec --no-startup-id wal -i ~/Pictures/Wallpapers/1776218.jpg
+exec --no-startup-id wal -i ~/Pictures/tanjiro2.jpg
 
 # Lock Screen
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -31,7 +31,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -103,7 +103,7 @@ bindsym $mod+a focus parent
 
 bindsym $mod+F2 exec brave
 bindsym $mod+F1 exec pcmanfm
-bindsym Print exec --no-startup-id i3-scrot
+bindsym Print exec --no-startup-id shutter -f
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -301,8 +301,8 @@ for_window [class="Xfce4-terminal"] floating enable
 # Settings for i3-gaps:
 
 # Set inner/outer gaps
-gaps inner 7
-gaps outer 5
+gaps inner 12
+gaps outer 3
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -356,3 +356,11 @@ mode "$mode_gaps_outer" {
 
 # Polybar Launch
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Transparent Terminal
+#exec --no-startup-id picom -CGb
+#
+#
+#for_window [class=".*"] border pixel 0
+#border_radius 8
+exec_always --no-startup-id picom --experimental-backends

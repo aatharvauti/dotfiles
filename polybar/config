@@ -27,18 +27,18 @@ alert = ${xrdb:color3:#222}
 
 [bar/example]
 width = 100%
-height = 35
+height = 40
 radius = 0.0
 fixed-center = false
 ; offset-x = 1%
-; offset-y = 1%
+; offset-y = 0%
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 2
 line-color = #f00
 
-border-size = 1
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -57,7 +57,7 @@ font-5 = "Font Awesome 5 Free Solid:pixelsize=10;1"
 
 modules-left = i3
 modules-center = xwindow mpd
-modules-right = alsa memory filesystem cpu wlan eth battery date
+modules-right = alsa memory filesystem cpu eth date
 ;wlan xblacklight
 
 ;separator = |
@@ -139,14 +139,12 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = net1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #8C66F7
+format-connected-underline = #9f78e1
 label-connected = %essid%
-format-connected-prefix = "W:"
-format-connected-foreground = ${colors.foreground-alt}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -167,7 +165,7 @@ interface = enp4s0
 interval = 3.0
 
 ;format-connected-underline = #55aa55
-format-connected-prefix = "E: "
+format-connected-prefix = "enp4s0: "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 format-connected-underline = #8C66F7
@@ -202,9 +200,9 @@ format-volume = <label-volume> <bar-volume>
 label-volume = 
 label-volume-foreground = ${colors.foreground}
 
-format-muted-prefix = ""
+format-muted-prefix = "~"
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = ~V
+label-muted = V
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.primary}
@@ -215,7 +213,7 @@ bar-volume-foreground-4 = ${colors.primary}
 bar-volume-foreground-5 = ${colors.primary}
 bar-volume-foreground-6 = ${colors.primary}
 bar-volume-gradient = false
-bar-volume-indicator = █
+bar-volume-indicator = |
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
@@ -223,36 +221,36 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 98
+; [module/battery]
+; type = internal/battery
+; battery = BAT0
+; adapter = AC
+; full-at = 98
 
-format-charging = <label-charging>
-format-charging-underline = #90ee90
+; format-charging = <animation-charging> <label-charging>
+; format-charging-underline = ${colors.primary}
 
-format-discharging = <label-discharging>
-format-discharging-underline = #90ee90
+; format-discharging = <animation-discharging> <label-discharging>
+; format-discharging-underline = ${colors.secondary}
 
-; format-full-prefix = ""
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = #90ee90
+; format-full-prefix = " "
+; format-full-prefix-foreground = ${colors.foreground-alt}
+; format-full-underline = ${colors.background-alt}
 
-; ramp-capacity-0 = 
-; ramp-capacity-1 = 
-; ramp-capacity-2 = 
+; ramp-capacity-0 = 
+; ramp-capacity-1 = 
+; ramp-capacity-2 = 
 ; ramp-capacity-foreground = ${colors.foreground-alt}
 
-; animation-charging-0 = 
-; animation-charging-1 = 
-; animation-charging-2 = 
+; animation-charging-0 = 
+; animation-charging-1 = 
+; animation-charging-2 = 
 ; animation-charging-foreground = ${colors.foreground-alt}
 ; animation-charging-framerate = 750
 
-; animation-discharging-0 = 
-; animation-discharging-1 = 
-; animation-discharging-2 = 
+; animation-discharging-0 = 
+; animation-discharging-1 = 
+; animation-discharging-2 = 
 ; animation-discharging-foreground = ${colors.foreground-alt}
 ; animation-discharging-framerate = 750
 
